@@ -12,7 +12,6 @@
 //getComputerChoice() will return "rock" "paper" or "scissors" from math.Random
 function getComputerChoice() {
     let randomNum = Math.random();
-    console.log(randomNum);
     let computerChoice;
     if (randomNum >= 0 && randomNum <= 1/3) {
         computerChoice = "rock";
@@ -79,9 +78,17 @@ function playGame() {
             console.log("Something went wrong");
         }
     }
-
-
+    
+    let humanChoice
+    let computerChoice
+    //loop 
+    for (let i=0; i<5; i++) {
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
+    playRound(humanChoice,computerChoice);
+    console.log(`Score is now human: ${humanScore} computer: ${computerScore}`);
+    }
+    console.log(`Congrats someone won with a score of human: ${humanScore} computer: ${computerScore}`);
 }
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
-playRound(humanChoice,computerChoice);
+
+playGame()
