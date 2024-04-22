@@ -35,18 +35,53 @@ function getHumanChoice() {
     }
 }
 
-//initialise scores:
-let humanScore = 0;
-let computerScore = 0;
 
-//create function playRound()
-function playRound(humanChoice, computerChoice) {
-    //all human win scenarios
-    if (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log ("You win! Rock beats Scissors!");
-        ++humanScore;
-    } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log ("You win! Scissors beats Paper!");
-        ++humanScore;
-    } else if ()
+
+function playGame() {
+    //initialise scores:
+    let humanScore = 0;
+    let computerScore = 0;
+
+    //create function playRound()
+    function playRound(humanChoice, computerChoice) {
+        //all human win scenarios
+        if (humanChoice === "rock" && computerChoice === "scissors") {
+            console.log ("You win! Rock beats Scissors!");
+            ++humanScore;
+        } else if (humanChoice === "scissors" && computerChoice === "paper") {
+            console.log ("You win! Scissors beats Paper!");
+            ++humanScore;
+        } else if (humanChoice === "paper" && computerChoice === "rock") {
+            console.log ("You win! Paper beats Rock!");
+            ++humanScore;
+        }
+        //all computer win scenarios
+        else if (computerChoice === "rock" && humanChoice === "scissors") {
+            console.log ("You lose! Rock beats Scissors!");
+            ++computerScore;
+        } else if (computerChoice === "scissors" && humanChoice === "paper") {
+            console.log ("You lose! Scissors beats Paper!");
+            ++computerScore;
+        } else if (computerChoice === "paper" && humanChoice === "rock") {
+            console.log ("You lose! Paper beats Rock!");
+            ++computerScore;
+        } 
+        // all tie scenarios
+        else if (computerChoice === "paper" && humanChoice === "paper") {
+            console.log ("Its a tie! Paper and Paper only makes origami");
+        } else if (computerChoice === "rock" && humanChoice === "rock") {
+            console.log ("Its a tie! Rock and Rock only makes more rock");
+        } else if (computerChoice === "scissors" && humanChoice === "scissors") {
+            console.log ("Its a tie! Scissors and Scissors means you now have two scissors");
+        } 
+        //other error
+        else {
+            console.log("Something went wrong");
+        }
+    }
+
+
 }
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+playRound(humanChoice,computerChoice);
