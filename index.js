@@ -86,9 +86,19 @@ function playGame() {
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
     playRound(humanChoice,computerChoice);
-    console.log(`Score is now human: ${humanScore} computer: ${computerScore}`);
+    console.log(`Score is now humans: ${humanScore} computers: ${computerScore}`);
     }
-    console.log(`Congrats someone won with a score of human: ${humanScore} computer: ${computerScore}`);
+    //winning messages
+    if (humanScore > computerScore) {
+        console.log(`Congrats humans won with a score of humans: ${humanScore} computers: ${computerScore}, humans get to live!`);
+    } else if (computerScore > humanScore) {
+        console.log(`Bummer computers won with a score of computers: ${computerScore} humans: ${humanScore} prepare for annihilation!`);
+    } else if (computerScore === humanScore) {
+        console.log(`Close one! Its a draw with a score of humans: ${humanScore} computers: ${computerScore}, nobody dies today!`);
+    } else {
+        console.log(`Something went wrong at the end`);
+    }
+    
 }
 
 playGame()
