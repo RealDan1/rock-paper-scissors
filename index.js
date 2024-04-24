@@ -78,9 +78,11 @@ function playGame() {
             console.log("Something went wrong");
         }
     }
-    
+
+    //initialise values 
     let humanChoice
     let computerChoice
+
     //loop 
     for (let i=0; i<5; i++) {
     humanChoice = getHumanChoice();
@@ -88,6 +90,7 @@ function playGame() {
     playRound(humanChoice,computerChoice);
     console.log(`Score is now humans: ${humanScore} computers: ${computerScore}`);
     }
+
     //winning messages
     if (humanScore > computerScore) {
         console.log(`Congrats humans won with a score of humans: ${humanScore} computers: ${computerScore}, humans get to live!`);
@@ -98,7 +101,7 @@ function playGame() {
     } else {
         console.log(`Something went wrong at the end`);
     }
-    
 }
 
+//call main function(to run game)
 playGame()
