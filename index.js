@@ -25,22 +25,24 @@ function getComputerChoice() {
 
 //getHumanChoice() returns "rock" "paper" or "scissors" from prompt()
 function getHumanChoice() {
-  let humanChoice = prompt(
-    'Please enter your choice of Rock Paper or Scissors:',
-    'e.g. rock'
-  );
-  humanChoice = humanChoice.toLowerCase();
-  if (
-    humanChoice === 'rock' ||
-    humanChoice === 'paper' ||
-    humanChoice === 'scissors'
-  ) {
-    return humanChoice;
-  } else {
-    alert(
-      'You entered an invalid value, please refresh and only type Rock Paper or Scissors'
-    );
-  }
+  // refactor for UI
+  // old code
+  // let humanChoice = prompt(
+  //   'Please enter your choice of Rock Paper or Scissors:',
+  //   'e.g. rock'
+  // );
+  // humanChoice = humanChoice.toLowerCase();
+  // if (
+  //   humanChoice === 'rock' ||
+  //   humanChoice === 'paper' ||
+  //   humanChoice === 'scissors'
+  // ) {
+  //   return humanChoice;
+  // } else {
+  //   alert(
+  //     'You entered an invalid value, please refresh and only type Rock Paper or Scissors'
+  //   );
+  // }
 }
 
 function playGame() {
@@ -93,10 +95,35 @@ function playGame() {
   let computerChoice;
 
   //loop
+  let btn_rock = document.querySelector('.btn_rock');
+  let btn_paper = document.querySelector('.btn_paper');
+  let btn_scissors = document.querySelector('.btn_scissors');
 
-  humanChoice = getHumanChoice();
   computerChoice = getComputerChoice();
-  playRound(humanChoice, computerChoice);
+
+  let humanchoice = '';
+
+  btn_rock.addEventListener('click', () => {
+    playRound('rock', computerChoice);
+    console.log(
+      `Score is now humans: ${humanScore} computers: ${computerScore}`
+    );
+  });
+
+  btn_paper.addEventListener('click', () => {
+    playRound('paper', computerChoice);
+    console.log(
+      `Score is now humans: ${humanScore} computers: ${computerScore}`
+    );
+  });
+
+  btn_scissors.addEventListener('click', () => {
+    playRound('scissors', computerChoice);
+    console.log(
+      `Score is now humans: ${humanScore} computers: ${computerScore}`
+    );
+  });
+
   console.log(`Score is now humans: ${humanScore} computers: ${computerScore}`);
 
   //winning messages
@@ -119,3 +146,5 @@ function playGame() {
 
 //call main function(to run game)
 playGame();
+
+// Needs a reset button. Needs final score announcement after 5 rounds, also trigger reset
