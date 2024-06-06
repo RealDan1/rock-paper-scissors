@@ -50,39 +50,42 @@ function playGame() {
   let humanScore = 0;
   let computerScore = 0;
 
+  let text1 = document.querySelector('.text1');
+  text1.textContent = '';
+
   //create function playRound()
+  //rewrite all these as case/break code instead of else if.
   function playRound(humanChoice, computerChoice) {
     //all human win scenarios
     if (humanChoice === 'rock' && computerChoice === 'scissors') {
-      console.log('You win! Rock beats Scissors!');
+      text1.textContent = 'You win! Rock beats Scissors!';
       ++humanScore;
     } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-      console.log('You win! Scissors beats Paper!');
+      text1.textContent = 'You win! Scissors beats Paper!';
       ++humanScore;
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-      console.log('You win! Paper beats Rock!');
+      text1.textContent = 'You win! Paper beats Rock!';
       ++humanScore;
     }
     //all computer win scenarios
     else if (computerChoice === 'rock' && humanChoice === 'scissors') {
-      console.log('You lose! Rock beats Scissors!');
+      text1.textContent = 'You lose! Rock beats Scissors!';
       ++computerScore;
     } else if (computerChoice === 'scissors' && humanChoice === 'paper') {
-      console.log('You lose! Scissors beats Paper!');
+      text1.textContent = 'You lose! Scissors beats Paper!';
       ++computerScore;
     } else if (computerChoice === 'paper' && humanChoice === 'rock') {
-      console.log('You lose! Paper beats Rock!');
+      text1.textContent = 'You lose! Paper beats Rock!';
       ++computerScore;
     }
     // all tie scenarios
     else if (computerChoice === 'paper' && humanChoice === 'paper') {
-      console.log('Its a tie! Paper and Paper only makes origami');
+      text1.textContent = 'Its a tie! Paper and Paper only makes origami';
     } else if (computerChoice === 'rock' && humanChoice === 'rock') {
-      console.log('Its a tie! Rock and Rock only makes more rock');
+      text1.textContent = 'Its a tie! Rock and Rock only makes more rock';
     } else if (computerChoice === 'scissors' && humanChoice === 'scissors') {
-      console.log(
-        'Its a tie! Scissors and Scissors means you now have two scissors'
-      );
+      text1.textContent =
+        'Its a tie! Scissors and Scissors means you now have two scissors';
     }
     //other error
     else {
@@ -102,29 +105,24 @@ function playGame() {
   computerChoice = getComputerChoice();
 
   let humanchoice = '';
+  let text2 = document.querySelector('.text2');
 
   btn_rock.addEventListener('click', () => {
     playRound('rock', computerChoice);
-    console.log(
-      `Score is now humans: ${humanScore} computers: ${computerScore}`
-    );
+    text2.textContent = `Score is now humans: ${humanScore} computers: ${computerScore}`;
   });
 
   btn_paper.addEventListener('click', () => {
     playRound('paper', computerChoice);
-    console.log(
-      `Score is now humans: ${humanScore} computers: ${computerScore}`
-    );
+    text2.textContent = `Score is now humans: ${humanScore} computers: ${computerScore}`;
   });
 
   btn_scissors.addEventListener('click', () => {
     playRound('scissors', computerChoice);
-    console.log(
-      `Score is now humans: ${humanScore} computers: ${computerScore}`
-    );
+    text2.textContent = `Score is now humans: ${humanScore} computers: ${computerScore}`;
   });
 
-  console.log(`Score is now humans: ${humanScore} computers: ${computerScore}`);
+  text2.textContent = `Score is now humans: ${humanScore} computers: ${computerScore}`;
 
   //winning messages
   if (humanScore > computerScore) {
