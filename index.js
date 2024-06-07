@@ -19,7 +19,7 @@ function playGame() {
 
   let text1 = document.querySelector('.text1');
   text1.textContent = '';
-  let roundCount = 0;
+  let roundCount = 1;
 
   //create function playRound()
   function playRound(humanChoice, computerChoice) {
@@ -66,7 +66,6 @@ function playGame() {
   }
 
   //initialise values
-  let humanChoice;
   let computerChoice;
 
   //loop
@@ -79,6 +78,7 @@ function playGame() {
   let humanchoice = '';
   let text2 = document.querySelector('.text2');
 
+  //round triggers and events listeners for buttons
   btn_rock.addEventListener('click', () => {
     playRound('rock', computerChoice);
     text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
@@ -97,7 +97,7 @@ function playGame() {
     roundCount++;
   });
 
-  text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
+  // text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
 
   //winning messages
   if (humanScore > computerScore) {
