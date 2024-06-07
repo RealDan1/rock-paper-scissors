@@ -19,23 +19,27 @@ function playGame() {
 
   let text1 = document.querySelector('.text1');
   text1.textContent = '';
+  let roundCount = 0;
 
   //create function playRound()
   function playRound(humanChoice, computerChoice) {
     //all human win scenarios
     if (humanChoice === 'rock' && computerChoice === 'scissors') {
-      text1.textContent = 'You win! Rock beats Scissors!';
+      text1.textContent =
+        'Computer plays scissors. You win! Rock beats Scissors!';
       ++humanScore;
     } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-      text1.textContent = 'You win! Scissors beats Paper!';
+      text1.textContent =
+        'Computer plays paper. You win! Scissors beats Paper!';
       ++humanScore;
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-      text1.textContent = 'You win! Paper beats Rock!';
+      text1.textContent = 'Computer plays rock. You win! Paper beats Rock!';
       ++humanScore;
     }
     //all computer win scenarios
     else if (computerChoice === 'rock' && humanChoice === 'scissors') {
-      text1.textContent = 'You lose! Rock beats Scissors!';
+      text1.textContent =
+        'Computer plays scissors. You lose! Rock beats Scissors!';
       ++computerScore;
     } else if (computerChoice === 'scissors' && humanChoice === 'paper') {
       text1.textContent = 'You lose! Scissors beats Paper!';
@@ -75,20 +79,23 @@ function playGame() {
 
   btn_rock.addEventListener('click', () => {
     playRound('rock', computerChoice);
-    text2.textContent = `Score is now humans: ${humanScore} computers: ${computerScore}`;
+    text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
+    roundCount++;
   });
 
   btn_paper.addEventListener('click', () => {
     playRound('paper', computerChoice);
-    text2.textContent = `Score is now humans: ${humanScore} computers: ${computerScore}`;
+    text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
+    roundCount++;
   });
 
   btn_scissors.addEventListener('click', () => {
     playRound('scissors', computerChoice);
-    text2.textContent = `Score is now humans: ${humanScore} computers: ${computerScore}`;
+    text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
+    roundCount++;
   });
 
-  text2.textContent = `Score is now humans: ${humanScore} computers: ${computerScore}`;
+  text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
 
   //winning messages
   if (humanScore > computerScore) {
