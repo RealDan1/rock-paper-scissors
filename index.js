@@ -42,20 +42,23 @@ function playGame() {
         'Computer plays scissors. You lose! Rock beats Scissors!';
       ++computerScore;
     } else if (computerChoice === 'scissors' && humanChoice === 'paper') {
-      text1.textContent = 'You lose! Scissors beats Paper!';
+      text1.textContent =
+        'Computer plays paper. You lose! Scissors beats Paper!';
       ++computerScore;
     } else if (computerChoice === 'paper' && humanChoice === 'rock') {
-      text1.textContent = 'You lose! Paper beats Rock!';
+      text1.textContent = 'Computer plays rock. You lose! Paper beats Rock!';
       ++computerScore;
     }
     // all tie scenarios
     else if (computerChoice === 'paper' && humanChoice === 'paper') {
-      text1.textContent = 'Its a tie! Paper and Paper only makes origami';
+      text1.textContent =
+        'Computer plays paper. Its a tie! Paper and Paper only makes origami';
     } else if (computerChoice === 'rock' && humanChoice === 'rock') {
-      text1.textContent = 'Its a tie! Rock and Rock only makes more rock';
+      text1.textContent =
+        'Computer plays rock. Its a tie! Rock and Rock only makes more rock';
     } else if (computerChoice === 'scissors' && humanChoice === 'scissors') {
       text1.textContent =
-        'Its a tie! Scissors and Scissors means you now have two scissors';
+        'Computer plays scissors. Its a tie! Scissors and Scissors means you now have two scissors';
     }
     //other error
     else {
