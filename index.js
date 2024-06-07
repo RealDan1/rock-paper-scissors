@@ -38,15 +38,14 @@ function playGame() {
     }
     //all computer win scenarios
     else if (computerChoice === 'rock' && humanChoice === 'scissors') {
-      text1.textContent =
-        'Computer plays scissors. You lose! Rock beats Scissors!';
+      text1.textContent = 'Computer plays rock. You lose! Rock beats Scissors!';
       ++computerScore;
     } else if (computerChoice === 'scissors' && humanChoice === 'paper') {
       text1.textContent =
-        'Computer plays paper. You lose! Scissors beats Paper!';
+        'Computer plays scissors. You lose! Scissors beats Paper!';
       ++computerScore;
     } else if (computerChoice === 'paper' && humanChoice === 'rock') {
-      text1.textContent = 'Computer plays rock. You lose! Paper beats Rock!';
+      text1.textContent = 'Computer plays paper. You lose! Paper beats Rock!';
       ++computerScore;
     }
     // all tie scenarios
@@ -122,4 +121,5 @@ function playGame() {
 playGame();
 
 // Needs a reset button. Needs final score announcement after 5 rounds, also trigger reset
-//bugs: can cheat by clicking the same button multiple times
+//bug1: can cheat by clicking the same button multiple times
+//bug2: one of the readouts its wrong(says i played scissors but i played paper)
