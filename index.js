@@ -112,4 +112,4 @@ function playGame() {
 playGame();
 
 // Needs a reset button. Needs final score announcement after 5 rounds, also trigger reset
-//bugs: can cheat by clicking the same button multiple times(maybe reset computer choice?)
+//bugs: can cheat by clicking the same button multiple times
