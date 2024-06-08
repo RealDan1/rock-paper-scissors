@@ -73,25 +73,30 @@ function playGame() {
   let btn_paper = document.querySelector('.btn_paper');
   let btn_scissors = document.querySelector('.btn_scissors');
 
-  computerChoice = getComputerChoice();
-
   let humanchoice = '';
   let text2 = document.querySelector('.text2');
 
   //round triggers and events listeners for buttons
+
+  //play rock
   btn_rock.addEventListener('click', () => {
+    computerChoice = getComputerChoice();
     playRound('rock', computerChoice);
     text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
     roundCount++;
   });
 
+  //play paper
   btn_paper.addEventListener('click', () => {
+    computerChoice = getComputerChoice();
     playRound('paper', computerChoice);
     text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
     roundCount++;
   });
 
+  //play scissors
   btn_scissors.addEventListener('click', () => {
+    computerChoice = getComputerChoice();
     playRound('scissors', computerChoice);
     text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
     roundCount++;
