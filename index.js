@@ -84,6 +84,12 @@ function playGame() {
     playRound('rock', computerChoice);
     text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
     roundCount++;
+
+    //check for win or lose
+    if (humanScore === 5) {
+      winningMessages();
+      resetGame();
+    }
   });
 
   //play paper
@@ -92,6 +98,12 @@ function playGame() {
     playRound('paper', computerChoice);
     text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
     roundCount++;
+
+    //check for win or lose
+    if (humanScore === 5) {
+      winningMessages();
+      resetGame();
+    }
   });
 
   //play scissors
@@ -100,6 +112,12 @@ function playGame() {
     playRound('scissors', computerChoice);
     text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
     roundCount++;
+
+    //check for win or lose
+    if (humanScore === 5) {
+      winningMessages();
+      resetGame();
+    }
   });
 
   // text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
@@ -109,19 +127,21 @@ function playGame() {
 
 function winningMessages() {
   if (humanScore > computerScore) {
-    console.log(
-      `Congrats humans won with a score of humans: ${humanScore} computers: ${computerScore}, humans get to live!`
-    );
+    text1.textContent = `Congrats humans won with a score of humans: ${humanScore} computers: ${computerScore}, humans get to live!`;
   } else if (computerScore > humanScore) {
-    console.log(
-      `Bummer computers won with a score of computers: ${computerScore} humans: ${humanScore} prepare for annihilation!`
-    );
+    text1.textContent = `Bummer computers won with a score of computers: ${computerScore} humans: ${humanScore} prepare for annihilation!`;
   } else if (computerScore === humanScore) {
-    console.log(
-      `Close one! Its a draw with a score of humans: ${humanScore} computers: ${computerScore}, nobody dies today!`
-    );
+    text1.textContent = `Close one! Its a draw with a score of humans: ${humanScore} computers: ${computerScore}, nobody dies today!`;
   } else {
-    console.log(`Something went wrong at the end`);
+    text1.textContent = `Something went wrong at the end`;
+  }
+
+  //reset scores
+  function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    roundCount = 1;
+    // text2.textContent = '';
   }
 }
 //call main function(to run game)
