@@ -75,6 +75,7 @@ function playGame() {
 
   let humanchoice = '';
   let text2 = document.querySelector('.text2');
+  let text3 = document.querySelector('.text3');
 
   //round triggers and events listeners for buttons
 
@@ -127,13 +128,13 @@ function playGame() {
 
 function winningMessages() {
   if (humanScore > computerScore) {
-    text1.textContent = `Congrats humans won with a score of humans: ${humanScore} computers: ${computerScore}, humans get to live!`;
+    text3.textContent = `Congrats humans won with a score of humans: ${humanScore} computers: ${computerScore}, humans get to live!`;
   } else if (computerScore > humanScore) {
-    text1.textContent = `Bummer computers won with a score of computers: ${computerScore} humans: ${humanScore} prepare for annihilation!`;
+    text3.textContent = `Bummer computers won with a score of computers: ${computerScore} humans: ${humanScore} prepare for annihilation!`;
   } else if (computerScore === humanScore) {
-    text1.textContent = `Close one! Its a draw with a score of humans: ${humanScore} computers: ${computerScore}, nobody dies today!`;
+    text3.textContent = `Close one! Its a draw with a score of humans: ${humanScore} computers: ${computerScore}, nobody dies today!`;
   } else {
-    text1.textContent = `Something went wrong at the end`;
+    text3.textContent = `Something went wrong at the end`;
   }
 
   //reset scores
