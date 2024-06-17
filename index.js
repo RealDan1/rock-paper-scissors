@@ -12,6 +12,27 @@ function getComputerChoice() {
   return computerChoice;
 }
 
+//winning messages
+function winningMessages() {
+  if (humanScore > computerScore) {
+    text2.textContent = `Congrats humans won with a score of humans: ${humanScore} computers: ${computerScore}, humans get to live!`;
+  } else if (computerScore > humanScore) {
+    text2.textContent = `Bummer computers won with a score of computers: ${computerScore} humans: ${humanScore} prepare for annihilation!`;
+  } else if (computerScore === humanScore) {
+    text2.textContent = `Close one! Its a draw with a score of humans: ${humanScore} computers: ${computerScore}, nobody dies today!`;
+  } else {
+    text2.textContent = `Something went wrong at the end`;
+  }
+
+  //reset scores
+  function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    roundCount = 1;
+    // text2.textContent = '';
+  }
+}
+
 function playGame() {
   //initialise scores:
 
@@ -121,8 +142,6 @@ function playGame() {
   });
 
   // text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
-
-  //winning messages
 }
 
 //call main function(to run game)
