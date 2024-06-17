@@ -81,13 +81,12 @@ function playGame() {
 
   //play rock
   btn_rock.addEventListener('click', () => {
-    computerChoice = getComputerChoice();
-
     //check for win or lose
     if (humanScore === 5) {
       winningMessages();
       resetGame();
     } else {
+      computerChoice = getComputerChoice();
       playRound('rock', computerChoice);
       text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
       roundCount++;
@@ -96,29 +95,29 @@ function playGame() {
 
   //play paper
   btn_paper.addEventListener('click', () => {
-    computerChoice = getComputerChoice();
-    playRound('paper', computerChoice);
-    text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
-    roundCount++;
-
     //check for win or lose
     if (humanScore === 5) {
       winningMessages();
       resetGame();
+    } else {
+      computerChoice = getComputerChoice();
+      playRound('paper', computerChoice);
+      text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
+      roundCount++;
     }
   });
 
   //play scissors
   btn_scissors.addEventListener('click', () => {
-    computerChoice = getComputerChoice();
-    playRound('scissors', computerChoice);
-    text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
-    roundCount++;
-
     //check for win or lose
     if (humanScore === 5) {
       winningMessages();
       resetGame();
+    } else {
+      computerChoice = getComputerChoice();
+      playRound('scissors', computerChoice);
+      text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
+      roundCount++;
     }
   });
 
