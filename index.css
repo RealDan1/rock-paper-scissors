@@ -1,6 +1,6 @@
 button {
   color: white;
-  background-color: rgb(94, 112, 112);
+  background-color: rgb(99, 145, 145);
   border: 0px;
   border-radius: 5px;
   margin: 10px;
@@ -12,6 +12,7 @@ body {
   justify-content: center;
   flex-direction: row; */
   text-align: center;
+  background-color: rgb(97, 97, 97);
 }
 
 .button-box {
