@@ -82,14 +82,15 @@ function playGame() {
   //play rock
   btn_rock.addEventListener('click', () => {
     computerChoice = getComputerChoice();
-    playRound('rock', computerChoice);
-    text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
-    roundCount++;
 
     //check for win or lose
     if (humanScore === 5) {
       winningMessages();
       resetGame();
+    } else {
+      playRound('rock', computerChoice);
+      text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
+      roundCount++;
     }
   });
 
