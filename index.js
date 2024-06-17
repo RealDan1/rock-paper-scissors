@@ -14,12 +14,9 @@ function getComputerChoice() {
 
 function playGame() {
   //initialise scores:
-  let humanScore = 0;
-  let computerScore = 0;
 
   let text1 = document.querySelector('.text1');
   text1.textContent = '';
-  let roundCount = 1;
 
   //create function playRound()
   function playRound(humanChoice, computerChoice) {
@@ -67,7 +64,9 @@ function playGame() {
 
   //initialise values
   let computerChoice;
-
+  let humanScore = 0;
+  let computerScore = 0;
+  let roundCount = 1;
   //loop
   let btn_rock = document.querySelector('.btn_rock');
   let btn_paper = document.querySelector('.btn_paper');
