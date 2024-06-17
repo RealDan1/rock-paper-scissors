@@ -81,7 +81,7 @@ function playGame() {
   //play rock
   btn_rock.addEventListener('click', () => {
     //check for win or lose
-    if (roundCount === 5) {
+    if (roundCount === 6) {
       winningMessages();
       resetGame();
     } else {
@@ -95,7 +95,7 @@ function playGame() {
   //play paper
   btn_paper.addEventListener('click', () => {
     //check for win or lose
-    if (roundCount === 5) {
+    if (roundCount === 6) {
       winningMessages();
       resetGame();
     } else {
@@ -109,7 +109,7 @@ function playGame() {
   //play scissors
   btn_scissors.addEventListener('click', () => {
     //check for win or lose
-    if (roundCount === 5) {
+    if (roundCount === 6) {
       winningMessages();
       resetGame();
     } else {
