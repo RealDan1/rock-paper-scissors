@@ -21,13 +21,13 @@ function getComputerChoice() {
 //winning messages
 function winningMessages() {
   if (humanScore > computerScore) {
-    text2.textContent = `Congrats humans won with a score of humans: ${humanScore} computers: ${computerScore}, humans get to live!`;
+    text3.textContent = `Congrats humans won with a score of humans: ${humanScore} computers: ${computerScore}, humans get to live!`;
   } else if (computerScore > humanScore) {
-    text2.textContent = `Bummer computers won with a score of computers: ${computerScore} humans: ${humanScore} prepare for annihilation!`;
+    text3.textContent = `Bummer computers won with a score of computers: ${computerScore} humans: ${humanScore} prepare for annihilation!`;
   } else if (computerScore === humanScore) {
-    text2.textContent = `Close one! Its a draw with a score of humans: ${humanScore} computers: ${computerScore}, nobody dies today!`;
+    text3.textContent = `Close one! Its a draw with a score of humans: ${humanScore} computers: ${computerScore}, nobody dies today!`;
   } else {
-    text2.textContent = `Something went wrong at the end`;
+    text3.textContent = `Something went wrong at the end`;
   }
 }
 
@@ -102,7 +102,7 @@ function playGame() {
   //play rock
   btn_rock.addEventListener('click', () => {
     //increment round
-    roundCount++;
+    ++roundCount;
     //check for win or lose
     if (roundCount >= 6) {
       winningMessages();
@@ -117,7 +117,7 @@ function playGame() {
   //play paper
   btn_paper.addEventListener('click', () => {
     //increment round
-    roundCount++;
+    ++roundCount;
     //check for win or lose
     if (roundCount >= 6) {
       winningMessages();
@@ -132,7 +132,7 @@ function playGame() {
   //play scissors
   btn_scissors.addEventListener('click', () => {
     //increment round
-    roundCount++;
+    ++roundCount;
     //check for win or lose
     if (roundCount >= 6) {
       winningMessages();
