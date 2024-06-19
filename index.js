@@ -29,8 +29,6 @@ function winningMessages() {
   } else {
     text2.textContent = `Something went wrong at the end`;
   }
-
-  //reset scores
 }
 
 function resetGame() {
@@ -103,6 +101,8 @@ function playGame() {
 
   //play rock
   btn_rock.addEventListener('click', () => {
+    //increment round
+    roundCount++;
     //check for win or lose
     if (roundCount >= 6) {
       winningMessages();
@@ -111,12 +111,13 @@ function playGame() {
       computerChoice = getComputerChoice();
       playRound('rock', computerChoice);
       text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
-      roundCount++;
     }
   });
 
   //play paper
   btn_paper.addEventListener('click', () => {
+    //increment round
+    roundCount++;
     //check for win or lose
     if (roundCount >= 6) {
       winningMessages();
@@ -125,12 +126,13 @@ function playGame() {
       computerChoice = getComputerChoice();
       playRound('paper', computerChoice);
       text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
-      roundCount++;
     }
   });
 
   //play scissors
   btn_scissors.addEventListener('click', () => {
+    //increment round
+    roundCount++;
     //check for win or lose
     if (roundCount >= 6) {
       winningMessages();
@@ -139,7 +141,6 @@ function playGame() {
       computerChoice = getComputerChoice();
       playRound('scissors', computerChoice);
       text2.textContent = `Round ${roundCount}: Score is now humans: ${humanScore} computers: ${computerScore}`;
-      roundCount++;
     }
   });
 
