@@ -1,3 +1,9 @@
+//initialise values
+let computerChoice;
+let humanScore = 0;
+let computerScore = 0;
+let roundCount = 1;
+
 //getComputerChoice() will return "rock" "paper" or "scissors"
 function getComputerChoice() {
   let randomNum = Math.random();
@@ -84,11 +90,6 @@ function playGame() {
     }
   }
 
-  //initialise values
-  let computerChoice;
-  let humanScore = 0;
-  let computerScore = 0;
-  let roundCount = 1;
   //loop
   let btn_rock = document.querySelector('.btn_rock');
   let btn_paper = document.querySelector('.btn_paper');
