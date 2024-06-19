@@ -3,6 +3,14 @@ let computerChoice;
 let humanScore = 0;
 let computerScore = 0;
 let roundCount = 0;
+let humanchoice = '';
+
+//add event listeners
+let btn_rock = document.querySelector('.btn_rock');
+let btn_paper = document.querySelector('.btn_paper');
+let btn_scissors = document.querySelector('.btn_scissors');
+let text2 = document.querySelector('.text2');
+let text3 = document.querySelector('.text3');
 
 //getComputerChoice() will return "rock" "paper" or "scissors"
 function getComputerChoice() {
@@ -89,13 +97,6 @@ function playGame() {
   }
 
   //loop
-  let btn_rock = document.querySelector('.btn_rock');
-  let btn_paper = document.querySelector('.btn_paper');
-  let btn_scissors = document.querySelector('.btn_scissors');
-
-  let humanchoice = '';
-  let text2 = document.querySelector('.text2');
-  let text3 = document.querySelector('.text3');
 
   //round triggers and events listeners for buttons
 
