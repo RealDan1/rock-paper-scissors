@@ -34,7 +34,7 @@ function winningMessages() {
 function resetGame() {
   humanScore = 0;
   computerScore = 0;
-  roundCount = 1;
+  roundCount = 0;
   // text2.textContent = '';
 }
 
