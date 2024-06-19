@@ -2,7 +2,7 @@
 let computerChoice;
 let humanScore = 0;
 let computerScore = 0;
-let roundCount = 1;
+let roundCount = 0;
 
 //getComputerChoice() will return "rock" "paper" or "scissors"
 function getComputerChoice() {
