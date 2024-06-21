@@ -29,8 +29,9 @@ function getComputerChoice() {
 //checkRounds count
 function checkRounds() {
   if (roundCount === 5) {
-    resetGame();
+    // resetGame();
     winningMessages();
+    resetGame();
   }
 }
 
@@ -111,13 +112,10 @@ function playGame() {
 
   //play rock
   btn_rock.addEventListener('click', () => {
-    checkRounds();
-    //increment round
     ++roundCount;
     //check for win or lose
     if (roundCount >= 6) {
       winningMessages();
-      // resetGame();
     } else {
       computerChoice = getComputerChoice();
       playRound('rock', computerChoice);
@@ -128,13 +126,10 @@ function playGame() {
 
   //play paper
   btn_paper.addEventListener('click', () => {
-    checkRounds();
-    //increment round
     ++roundCount;
     //check for win or lose
     if (roundCount >= 6) {
       winningMessages();
-      // resetGame();
     } else {
       computerChoice = getComputerChoice();
       playRound('paper', computerChoice);
@@ -145,13 +140,10 @@ function playGame() {
 
   //play scissors
   btn_scissors.addEventListener('click', () => {
-    checkRounds();
-    //increment round
     ++roundCount;
     //check for win or lose
     if (roundCount >= 6) {
       winningMessages();
-      // resetGame();
     } else {
       computerChoice = getComputerChoice();
       playRound('scissors', computerChoice);
