@@ -51,6 +51,8 @@ function resetGame() {
   humanScore = 0;
   computerScore = 0;
   roundCount = 0;
+  text1.textContent = '';
+  text2.textContent = '';
 }
 
 function playGame() {
