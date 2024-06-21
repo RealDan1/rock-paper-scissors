@@ -26,6 +26,14 @@ function getComputerChoice() {
   return computerChoice;
 }
 
+//checkRounds count
+function checkRounds() {
+  if (roundCount === 5) {
+    resetGame();
+    winningMessages();
+  }
+}
+
 //winning messages
 function winningMessages() {
   if (humanScore > computerScore) {
@@ -43,7 +51,6 @@ function resetGame() {
   humanScore = 0;
   computerScore = 0;
   roundCount = 0;
-  // text2.textContent = '';
 }
 
 function playGame() {
