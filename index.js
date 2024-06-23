@@ -33,6 +33,7 @@ function checkRounds() {
     winningMessages();
     resetGame();
   } else if (roundCount === 1) {
+    //clear text on new game
     text3.textContent = '';
   }
 }
