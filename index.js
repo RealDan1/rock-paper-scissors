@@ -32,6 +32,8 @@ function checkRounds() {
     // resetGame();
     winningMessages();
     resetGame();
+  } else if (roundCount === 1) {
+    text3.textContent = '';
   }
 }
 
