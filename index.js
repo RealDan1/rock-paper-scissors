@@ -161,5 +161,4 @@ function playGame() {
 //call main function(to run game)
 playGame();
 
-// Needs a reset button. Needs final score announcement after 5 rounds, also trigger reset
-//bug2: one of the readouts its wrong(says i played scissors but i played paper)
+// Needs a reset button.
